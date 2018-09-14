@@ -4,6 +4,12 @@
     <div class ="container min-container">
         <h2 class="basic-title">Add</h2>
 
+        <% if(locals.erros){ %>
+            <% for(erro of erros) { %>
+                <li><%= erro.param %>: <%= erro.message %></li>
+            <% } %>
+        <% } %>
+
         <form action="/livros" method="post" class="well" role="form">
             <div class="form-group">
                 <label for="titulo">Titulo</label>

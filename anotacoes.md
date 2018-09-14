@@ -76,3 +76,9 @@ function map(funcaoDeCallBack) {
 1 - nodemon --inspect-brk server.js
 2 - chrome://inspect/
 3 - Clica em "Open Dedicated Server..."
+
+## Porque o body-parser existe?
+- https://nodejs.org/api/stream.html
+
+## Mensagens customizadas com Fluent Validations?
+- https://github.com/coditorium/nodejs-fluent-validator/issues/2

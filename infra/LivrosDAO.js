@@ -5,7 +5,7 @@ class LivrosDAO {
         return new Promise((resolve, reject) => {
             connectionFactory()
                 .then(function(connection) {
-                    connection.query(`SELECT * FROM livros`, function(err, results) {
+                    connection.query(`SELECT * FROM livros2`, function(err, results) {
                             if(err) {
                                 reject(err)
                             }
@@ -14,6 +14,21 @@ class LivrosDAO {
                 })
         })
     }
+
+    cadastrarLivro(livro) {
+        return new Promise((resolve, reject) => {
+            connectionFactory()
+                .then(function(connection) {
+                    connection.query(`INSERT INTO livros SET ?`, livro, function(err, results) {
+                            if(err) {
+                                reject(err)
+                            }
+                            resolve(results)
+                        })
+                })
+        })
+    }
+
 }
 
 
