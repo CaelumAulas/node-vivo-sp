@@ -1,0 +1,23 @@
+{
+  "name": "casadocodego",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mssql": "^4.2.1",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "cross-env NO_DEPRECATION=tedious nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
