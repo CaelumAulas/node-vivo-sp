@@ -9,6 +9,8 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+const cors = require('cors')
+app.use(cors())
 // # Middlewares
 app.use(Express.static('./public'))
 // app.get('/css/bootstrap.min.css', (req,res) => {
@@ -16,9 +18,12 @@ app.use(Express.static('./public'))
 // })
 
 // Chamar o home e passar o app pro require
-require('./routes/home')(app) // Da console.log nisso
-require('./routes/livros')(app) // Express Router 
-
+var consign = require('consign');
+// require('./routes/home')(app) // Da console.log nisso
+// require('./routes/livros')(app) // Express Router 
+consign()
+  .include('routes')
+  .into(app);
 
 app.get('/pagina-errada', (req,res,next) => {
     const err = true

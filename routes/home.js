@@ -1,8 +1,14 @@
 module.exports = function (app) {
-
-    app.get('/', function(request, response) {
-        response.send('Home: alo alo w brazil')
-    })
+    const homeController = new HomeController()
+    
+    app.get('/', homeController.getHome)
 
 }
 
+
+
+class HomeController {
+    getHome(req,res) {
+
+    }
+}

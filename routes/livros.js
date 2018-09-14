@@ -5,6 +5,9 @@ module.exports = (app) => {
     // Criar o ./routes/livros.js
     // Importar como fizemos com o home.js
     app.get('/livros', async function (req, res, next) {
+        res.set('Access-Control-Allow-Origin', '*');
+
+
         const LivrosDAO = require('../infra/LivrosDAO')
         const livrosDAO = new LivrosDAO()
         // # async await: Async que é Sync
